@@ -10,6 +10,8 @@
         <intercept-url pattern="/user**" access="permitAll"/>
         <intercept-url pattern="/dba**" access="hasRole('ADMIN') or hasRole('DBA')"/>
         <access-denied-handler error-page="/WEB-INF/views/jsp/accessdenied.jsp"/>
+        <form-login login-page="/login" username-parameter="userID" password-parameter="password"/>
+        <csrf/>
     </http>
 
     <authentication-manager>
