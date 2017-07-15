@@ -12,18 +12,31 @@ import org.springframework.web.servlet.ModelAndView;
 public class HomeController {
 
 
-
-    @RequestMapping(value = "/user",method = RequestMethod.GET)
-    public ModelAndView user(){
+    @RequestMapping(value = "/user", method = RequestMethod.GET)
+    public ModelAndView user() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("user");
         return modelAndView;
     }
 
-    @RequestMapping(value = "/admin",method = RequestMethod.GET)
-    public ModelAndView admin(){
+    @RequestMapping(value = "/admin", method = RequestMethod.GET)
+    public ModelAndView admin() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("admin");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/dba", method = RequestMethod.GET)
+    public ModelAndView dba() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("dba");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/accessdenied", method = RequestMethod.GET)
+    public ModelAndView accessDenied() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("accessdenied");
         return modelAndView;
     }
 }
