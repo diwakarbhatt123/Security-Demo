@@ -15,6 +15,7 @@ import javax.persistence.criteria.*;
 /**
  * Created by diwakar on 15/07/17.
  */
+@Repository
 @Transactional
 public class UserDao {
 

@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 /**
  * Created by diwakar on 15/07/17.
  */
+@Service("customUserDetailsService")
 public class CustomUserDetailService implements UserDetailsService {
 
     private UserDao userDao;
