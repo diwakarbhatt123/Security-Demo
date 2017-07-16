@@ -14,6 +14,10 @@
         <access-denied-handler error-page="/WEB-INF/views/jsp/accessdenied.jsp"/>
         <form-login login-page="/login" username-parameter="userID" password-parameter="password"/>
         <csrf/>
+        <remember-me remember-me-parameter="remember-me"
+                     remember-me-cookie="remember-me"
+                     token-validity-seconds="86400"
+                     data-source-ref="dataSource"/>
     </http>
 
     <authentication-manager>
@@ -26,6 +30,7 @@
         <beans:property name="password" value="igdefault"/>
         <beans:property name="driverClassName" value="com.mysql.jdbc.Driver"/>
     </beans:bean>
+
 
     <beans:bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <beans:property name="configLocation" value="WEB-INF/hibernate.cfg.xml"/>
