@@ -18,6 +18,7 @@
         <!--Annotated entity class-->
         <mapping class="com.springsecuritydemo.domain.User"/>
         <mapping class="com.springsecuritydemo.domain.Role"/>
+        <mapping class="com.springsecuritydemo.domain.PersistantLogins"/>
 
     </session-factory>
 </hibernate-configuration>
