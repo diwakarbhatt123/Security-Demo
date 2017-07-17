@@ -1,0 +1,30 @@
+dn: ou=groups,dc=habuma,dc=com
+objectclass: top
+objectclass: organisationUnit
+ou: groups
+
+dn: ou=people,dc=habuma,dc=com
+objectclass: top
+objectclass: organisationUnit
+ou: people
+
+dn: uid=habuma,ou=people,dc=habuma,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Craig Walls
+sn: Walls
+uid: habuma
+userPassword: password
+
+dn: uid=jsmith,ou=people,dc=habuma,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: John Smith
+sn: Smith
+uid: jsmith
+userPassword: password
+member: uid=habuma, ou=people, dc=habuma, dc=com
