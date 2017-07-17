@@ -14,13 +14,18 @@
         <csrf/>
     </http>
 
+    <beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <beans:property name="url" value="jdbc:mysql://127.0.0.1:3307/springsecuritydemo"/>
+        <beans:property name="username" value="root"/>
+        <beans:property name="password" value="igdefault"/>
+        <beans:property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+    </beans:bean>
+
     <authentication-manager>
         <authentication-provider>
-            <user-service>
-                <user name="admin" password="admin" authorities="ROLE_ADMIN,ROLE_DBA"/>
-                <user name="diwakar" password="123456" authorities="ROLE_USER"/>
-                <user name="jalaj" password="123456" authorities="ROLE_DBA"/>
-            </user-service>
+            <jdbc-user-service data-source-ref="dataSource"
+                               users-by-username-query="select userId,password,enabled from User where userId=?"
+                               authorities-by-username-query="select User.userId,Role.role from User_Roles join User on User_Roles.User_Id=User.id join Role on User_Roles.Role_Id=Role.id where userId=?"/>
         </authentication-provider>
     </authentication-manager>
 
